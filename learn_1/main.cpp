@@ -214,22 +214,22 @@ void key_down(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
-		case 'w': // Press 'w' to move forward with camera
+		case 'r': 
 			is_camera_translate[0] = true;
 			break;
-		case 's': // Press 's' to move backward with camera
+		case 'f':
 			is_camera_translate[1] = true;
 			break;
-		case 'a': // Press 'a' to move left with camera
+		case 'd': 
 			is_camera_translate[2] = true;
 			break;
-		case 'd': // Press 'd' to move right with camera
+		case 'a':
 			is_camera_translate[3] = true;
 			break;
-		case 'r': // Press 'r' to move up with camera
+		case 's': 
 			is_camera_translate[4] = true;
 			break;
-		case 'f': // Press 'f' to move down with camera
+		case 'w':
 			is_camera_translate[5] = true;
 			break;
 	};
@@ -240,22 +240,22 @@ void key_up(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
-		case 'w': // Release 'w' to stop moving forward with camera
+		case 'r': 
 			is_camera_translate[0] = false;
 			break;
-		case 's': // Release 's' to stop moving backward with camera
+		case 'f': 
 			is_camera_translate[1] = false;
 			break;
-		case 'a': // Release 'e' to stop moving left with camera
+		case 'd': 
 			is_camera_translate[2] = false;
 			break;
-		case 'd': // Release 'd' to stop moving right with camera
+		case 'a': 
 			is_camera_translate[3] = false;
 			break;
-		case 'r': // Release 'r' to stop moving up with camera
+		case 's': 
 			is_camera_translate[4] = false;
 			break;
-		case 'f': // Release 'f' to stop moving down with camera
+		case 'w': 
 			is_camera_translate[5] = false;
 			break;
 	};
@@ -318,6 +318,8 @@ void special_key_up(int key, int x, int y)
 // Initialize the program and start
 void init(void)
 {
+	std::cout << "Press W/S/A/D/R/F to move around.\nPress UP/DOWN/LEFT/RIGHT/PageUp/PageDown for rotate around.\n";
+
 	// Initialize viewing values
 	eye = vec3(0.f, 0.f, 5.f);
 	up = vec3(0.f, 1.f, 0.f);
